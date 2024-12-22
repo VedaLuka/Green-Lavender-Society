@@ -1,0 +1,579 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Professional font */
+    line-height: 1.6;
+    background-color: #f9fafc;
+    color: #264653; /* Consistent text color */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2a9d8f; /* Matches the theme */
+    color: white;
+    padding: 0.2rem 0; /* Reduced padding */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem; /* Reduced horizontal padding */
+}
+
+header .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem; /* Smaller font size */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    margin-right: auto; /* Align logo to the left */
+}
+
+header .navbar-brand img {
+    width: 60px; /* Smaller logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+header .nav-link {
+    color: #f4f4f4;
+    font-size: 0.9rem; /* Reduced font size */
+    margin-left: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.2rem; /* Reduce padding around links */
+}
+
+header .nav-link:hover {
+    color: #f4a261;
+}
+
+header .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0; /* Removed padding */
+}
+
+header .navbar-toggler-icon {
+    width: 20px; /* Smaller toggler icon */
+    height: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28%255%2C%255%2C%255%2C%2E55%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* Smooth Transition between Navbar and Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: -1rem; /* Overlap with navbar slightly for smooth transition */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, #264653, rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+.hero h1 {
+    z-index: 2;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    z-index: 2;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+/* About Section */
+.about {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 4rem 2rem;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+    margin-bottom: 4rem; /* Add spacing from previous section */
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about img {
+    width: 150px; /* Larger logo */
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+}
+
+.about h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #264653; /* Consistent text color */
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #264653; /* Updated for consistency */
+    text-align: justify;
+}
+
+
+
+.cta {
+    background: linear-gradient(135deg, #edf6f9, #e9f5f5); /* Matches the supporters' section background */
+    color: #264653; /* Text color for readability */
+    text-align: center;
+    padding: 4rem 2rem; /* Balanced padding */
+    border-radius: 15px; /* Maintain consistent rounded corners */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta h2 {
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    font-size: 2.5rem; /* Header size */
+    margin-bottom: 1.5rem;
+    color: #264653; /* Matches text color of the supporters' section */
+    text-shadow: none; /* Remove unnecessary text shadow */
+}
+
+.cta p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #264653; /* Matches text color of the supporters' section */
+}
+
+.cta button {
+    background-color: #f4a261; /* Accent color for button */
+    color: #264653; /* Dark text for readability */
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta button:hover {
+    background-color: #e76f51; /* Darker accent on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta button:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Services Section */
+.services .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.services .card:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, #edf6f9, #e9f5f5);
+    border-radius: 15px;
+    padding: 5rem 2rem;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 4rem;
+    margin-bottom: 4rem; /* Add spacing from adjacent sections */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.testimonials .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #264653;
+    margin-bottom: 2rem;
+}
+
+.testimonials .testimonial {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #264653; /* Consistent text color */
+    text-align: left;
+    position: relative;
+}
+
+.testimonials .testimonial:before {
+    content: "\201C";
+    font-size: 3rem;
+    color: #2a9d8f;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+.testimonials .testimonial p {
+    margin: 0;
+    font-style: italic;
+}
+
+.testimonials .testimonial .author {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #264653; /* Consistent text color */
+    text-align: right;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #edf6f9;
+    border-radius: 10px;
+    padding: 3rem;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #2a9d8f; /* Matches navbar color */
+    color: white;
+    padding: 1rem 0; /* Reduced padding */
+    text-align: center;
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Reduced gap */
+}
+
+.footer-contact, .footer-social {
+    margin: 0; /* Removed extra margin */
+    text-align: center; /* Center-align content */
+}
+
+.footer-contact p, .footer-social h3 {
+    margin: 0.3rem 0; /* Compact spacing */
+    font-size: 0.9rem; /* Adjusted font size */
+}
+
+.footer-social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Reduced spacing between icons */
+    font-size: 1.2rem; /* Adjusted icon size */
+}
+
+.footer-social .social-icons a {
+    color: #f4f4f4;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.1); /* Subtle hover effect */
+    color: #f4a261; /* Matches hover color of navbar items */
+}
+
+.footer-rights {
+    margin-top: 1rem; /* Slight spacing for separation */
+    font-size: 0.8rem; /* Smaller text for copyright */
+    color: #ffffff;
+}
+
+
+/* Animations */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.cta button {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* General Responsive Rules */
+@media (max-width: 768px) {
+    body {
+        font-size: 90%; /* Scale down overall font size */
+        padding: 0;
+        margin: 0;
+        text-align: center; /* Center-align text globally */
+    }
+
+    header {
+        padding: 0.5rem 0;
+        text-align: center; /* Center-align header content */
+    }
+
+    header .navbar {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center;
+    }
+
+    header .navbar-brand {
+        font-size: 1.4rem; /* Reduce size of brand name */
+    }
+
+    header .navbar-brand img {
+        width: 70px; /* Smaller logo for mobile screens */
+        height: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    header .nav-link {
+        margin: 0.5rem 0; /* Add vertical spacing between links */
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hero {
+        height: 400px; /* Reduce hero height */
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust heading size */
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Adjust paragraph size */
+    }
+
+    section {
+        padding: 2rem 1rem; /* Adjust padding for sections */
+        text-align: center; /* Center-align all section content */
+    }
+
+    .section-title {
+        font-size: 1.8rem; /* Smaller title size */
+    }
+
+    .about,
+    .cta,
+    .testimonials,
+    .initiative,
+    .projects {
+        padding: 1.5rem; /* Compact section padding */
+        margin: 2rem auto;
+        max-width: 90%; /* Ensure sections fit within screen width */
+        text-align: center; /* Center-align all text */
+    }
+
+    .about img {
+        width: 80px; /* Smaller logo size in About section */
+        margin: 0 auto; /* Center-align the image */
+    }
+
+    .cta button {
+        padding: 0.8rem 2rem; /* Adjust button size */
+        font-size: 1rem;
+        width: 100%; /* Full width for better usability */
+        margin: 1rem auto; /* Center-align button */
+    }
+
+    .testimonials .testimonial {
+        padding: 1rem; /* Compact testimonial layout */
+        margin: 0 auto; /* Center-align testimonials */
+    }
+
+    .testimonials .testimonial p {
+        font-size: 1rem; /* Smaller text */
+    }
+
+    .projects .project-card {
+        padding: 1rem;
+        font-size: 1rem; /* Adjust project card text */
+        margin: 1rem auto; /* Center-align project cards */
+        max-width: 90%; /* Fit within screen width */
+    }
+
+    .projects .project-card h3 {
+        font-size: 1.4rem; /* Smaller heading */
+    }
+
+    .projects .project-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center; /* Center-align text in project cards */
+    }
+}
+
+/* Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0;
+        text-align: center; /* Ensure all header elements are centered */
+    }
+
+    header .navbar {
+        flex-direction: column; /* Fully stack links */
+        align-items: center;
+    }
+
+    header .nav-link {
+        font-size: 0.9rem; /* Reduce font size further */
+        margin: 0.4rem 0; /* Adjust spacing */
+    }
+
+    .hero {
+        height: 300px; /* Further reduce height */
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Adjust text size */
+    }
+
+    section {
+        padding: 1.5rem 1rem; /* Reduce section padding */
+        text-align: center; /* Ensure center alignment */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+
+    .cta button {
+        font-size: 0.9rem; /* Smaller button size */
+        padding: 0.6rem 1.5rem;
+        width: 100%; /* Full width button */
+        margin: 1rem auto;
+    }
+
+    .testimonials .testimonial {
+        padding: 0.8rem; /* Adjust testimonial padding */
+        font-size: 0.9rem; /* Adjust text size */
+        margin: 0 auto; /* Center-align testimonials */
+    }
+
+    .testimonials .testimonial p {
+        font-size: 0.85rem; /* Smaller paragraph text */
+    }
+
+    .projects .project-card {
+        padding: 0.8rem; /* Compact project card layout */
+        font-size: 0.9rem;
+        margin: 1rem auto; /* Center-align project cards */
+    }
+
+    .projects .project-card h3 {
+        font-size: 1.2rem; /* Smaller project heading */
+    }
+
+    .projects .project-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        text-align: center; /* Center-align text in project cards */
+    }
+}
+
+/* Images and Media */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%; /* Ensure images do not overflow */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center-align images */
+    }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem; /* Smaller footer text */
+        text-align: center; /* Center-align footer content */
+    }
+
+    footer a {
+        font-size: 0.9rem;
+    }
+}
+
