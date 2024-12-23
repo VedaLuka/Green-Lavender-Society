@@ -1,17 +1,18 @@
-/* Global Styles */
+/* Global Styles Section */
 body {
     font-family: 'Roboto', sans-serif; /* Professional font */
     line-height: 1.6;
-    background-color: #f9fafc;
-    color: #264653; /* Consistent text color */
+    background-color: #e8e8e8;
+    color: #000000; /* Consistent text color */
     margin: 0;
     padding: 0;
 }
 
+/* Header Section */
 header {
-    background-color: #2a9d8f; /* Matches the theme */
+    background-color: #005f46; /* Dark green background */
     color: white;
-    padding: 0.2rem 0; /* Reduced padding */
+    padding: 0.5rem 1rem; /* Reduced padding for a more compact navbar */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -19,61 +20,218 @@ header {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Navbar Container */
 header .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem; /* Reduced horizontal padding */
+    align-items: center; /* Vertically align all elements */
+    justify-content: space-between; /* Space out title and menu */
+    padding: 0; /* Remove extra padding */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
+/* Brand Title and Logo */
 header .navbar-brand {
     display: flex;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem; /* Smaller font size */
-    color: #ffffff;
+    align-items: center; /* Vertically align logo and text */
+    font-size: 1.5rem; /* Adjust font size for better visibility */
+    color: white;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.03rem;
-    margin-right: auto; /* Align logo to the left */
+    margin: 0; /* Remove extra margin */
+    white-space: nowrap; /* Prevent the title from wrapping */
+    overflow: hidden; /* Prevent overflow if the title is too long */
+    text-overflow: ellipsis; /* Add ellipsis for truncated titles */
+    flex-shrink: 0; /* Ensure the title doesn't shrink */
 }
 
 header .navbar-brand img {
-    width: 60px; /* Smaller logo */
-    height: auto;
-    margin-right: 10px;
+    width: 70px !important; /* Adjust logo size */
+    height: auto !important; /* Maintain aspect ratio */
+    margin-right: 10px !important; /* Space between logo and text */
 }
 
+/* Navbar Links */
+header .navbar-nav {
+    display: flex; /* Arrange links horizontally */
+    align-items: center; /* Vertically align links */
+    gap: 1rem; /* Add space between links */
+    margin-left: auto; /* Push links to the right */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+/* Prevent Overlap of Navbar Links and Title */
+header .navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Push the menu links to the right */
+    flex-grow: 1; /* Allow the navbar to take up available space */
+}
+
+/* Navbar Links Styling */
 header .nav-link {
-    color: #f4f4f4;
-    font-size: 0.9rem; /* Reduced font size */
-    margin-left: 1rem;
-    font-family: 'Poppins', sans-serif;
+    color: #ffffff; /* Ensure links are visible on dark backgrounds */
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.03rem;
     font-weight: 500;
+    padding: 0.4rem 0.6rem; /* Reduced padding for smaller navbar */
     transition: color 0.3s ease;
-    padding: 0.2rem; /* Reduce padding around links */
 }
 
 header .nav-link:hover {
-    color: #f4a261;
+    color: #f4a261; /* Highlight on hover */
 }
 
+/* Desktop View (Large Screens) */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important; /* Force horizontal layout */
+        align-items: center; /* Center vertically */
+        justify-content: flex-end; /* Push links to the right */
+        opacity: 1 !important; /* Ensure visibility */
+        transform: none !important; /* No transform for desktop */
+        background-color: transparent !important; /* Remove background */
+        box-shadow: none !important; /* Remove shadow */
+        position: static !important; /* Position inside the flow */
+    }
+
+    .navbar-nav {
+        gap: 1rem; /* Space out links more evenly */
+    }
+}
+
+/* Mobile View (Small Screens) */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
+        position: absolute; /* Position dropdown above content */
+        top: 70px; /* Align below the adjusted header */
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Add shadow for dropdown */
+        opacity: 0; /* Hidden by default */
+        transform: scaleY(0.8); /* Collapse effect */
+        transform-origin: top center;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1; /* Show dropdown */
+        transform: scaleY(1); /* Expand */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        gap: 0.5rem; /* Reduce spacing */
+    }
+
+    .nav-link {
+        text-align: center; /* Center-align text */
+    }
+}
+
+
+
+
+/* Hamburger Menu (Toggler Button) */
 header .navbar-toggler {
     border: none;
     background-color: transparent;
-    padding: 0; /* Removed padding */
+    padding: 0.5rem; /* Add padding for clickability */
+    margin-left: auto; /* Push to the far right */
+    align-self: center; /* Vertically align with the navbar */
 }
 
 header .navbar-toggler-icon {
-    width: 20px; /* Smaller toggler icon */
-    height: 20px;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28%255%2C%255%2C%255%2C%2E55%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 25px; /* Adjust size for better alignment */
+    height: 25px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Navbar Dropdown Background (Stylish and Animated) */
+header .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute; /* Ensures dropdown overlays content */
+    top: 106px; /* Adjust to move the dropdown lower */
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Add spacing inside the dropdown */
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    opacity: 0; /* Start fully transparent */
+    transform: scaleY(0.8); /* Start slightly scaled down */
+    transform-origin: top center; /* Scale from the top center */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth fade-in and scaling */
+}
+
+/* When Navbar is Open (Trigger Animation) */
+header .navbar-collapse.show {
+    opacity: 1; /* Fully visible */
+    transform: scaleY(1); /* Scale to normal size */
+}
+
+/* Navbar Dropdown Links */
+header .navbar-collapse .nav-link {
+    color: white; /* Light text color for visibility */
+    padding: 0.5rem 1rem; /* Add spacing for better clickability */
+    display: block; /* Stack links vertically */
+    text-align: center; /* Center-align text */
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+header .navbar-collapse .nav-link:hover {
+    color: #f4a261; /* Change color on hover */
+    text-shadow: 0px 0px 10px rgba(244, 162, 97, 0.8); /* Glow effect on hover */
+}
+
+/* Optional Hover Animation for the Links */
+header .navbar-collapse .nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+header .navbar-collapse .nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #f4a261; /* Hover underline color */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header .navbar-collapse .nav-link:hover::after {
+    width: 100%; /* Expand underline on hover */
 }
 
 
-/* Smooth Transition between Navbar and Hero Section */
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    /* Navbar for smaller screens */
+    header .navbar-nav {
+        flex-direction: column; /* Stack links vertically */
+        margin-left: 0; /* Reset margin for smaller screens */
+        gap: 0.5rem; /* Reduce spacing */
+    }
+
+    header .nav-link {
+        text-align: center; /* Center links for smaller screens */
+    }
+
+    header .navbar-toggler {
+        align-self: flex-start; /* Ensure toggler aligns on smaller screens */
+    }
+}
+
+
+
+/* Hero Section */
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg') no-repeat center center/cover;
     height: 600px;
@@ -84,7 +242,7 @@ header .navbar-toggler-icon {
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin-top: -1rem; /* Overlap with navbar slightly for smooth transition */
+    margin-top: -1rem;
 }
 
 .hero::before {
@@ -112,18 +270,81 @@ header .navbar-toggler-icon {
     margin: 1rem auto;
 }
 
-/* Section Styles */
-section {
+
+.initiatives {
     padding: 4rem 1rem;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    font-weight: bold;
-    color: #2a9d8f;
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    padding-left: 2rem;
 }
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #2a9d8f;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: right;
+}
+
+.timeline-item .timeline-content {
+    flex: 1;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item .timeline-content h3 {
+    font-size: 1.5rem;
+    color: #264653;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item .timeline-content p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.timeline-item .timeline-image {
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item .timeline-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 
 /* About Section */
 .about {
@@ -161,10 +382,216 @@ section {
 }
 
 
+.projects {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    border-radius: 15px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
 
+.projects .project-card {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.projects .section-title {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Change arrow color to black */
+    background-size: 100%; /* Ensure the arrow fits perfectly */
+    border-radius: 50%; /* Optional: Rounded shape for a modern look */
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+}
+
+
+.environment-news {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
+}
+
+.environment-news .section-title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.featured-news {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.featured-news img {
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-news-content {
+    flex: 1;
+}
+
+.featured-news-content h3 {
+    font-size: 2rem;
+    color: #264653;
+    margin-bottom: 1rem;
+}
+
+.featured-news-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.featured-news-content .read-more {
+    font-size: 1rem;
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.featured-news-content .read-more:hover {
+    color: #e76f51;
+}
+
+.additional-news .news-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.additional-news .news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.additional-news .news-item h4 {
+    font-size: 1.5rem;
+    color: #264653;
+    margin-bottom: 0.5rem;
+}
+
+.additional-news .news-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.additional-news .news-item .read-more {
+    font-size: 1rem;
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.additional-news .news-item .read-more:hover {
+    color: #e76f51;
+}
+
+
+
+.associated-companies {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.associated-companies .section-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    color: #000000;
+    
+}
+
+.associated-companies .company-card {
+    margin-bottom: 2rem; /* Space between individual cards */
+}
+
+.associated-companies .company-card img {
+    margin-bottom: 1rem; /* Space between image and text */
+}
+
+.associated-companies .company-card h5 {
+    margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+
+.statistics {
+    padding: 4rem 1rem; /* Adequate padding inside the section */
+    margin-top: 6rem; /* Adds space above the section */
+    margin-bottom: 6rem; /* Adds space below the section */
+    background: linear-gradient(135deg, #bbbbbb, #ffffff); /* Gradient background */
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    text-align: center; /* Center aligns content */
+}
+
+.statistics .section-title {
+    font-size: 2rem; /* Reduced font size for the section title */
+    margin-bottom: 2rem; /* Space below the section title */
+    color: #000000; /* Title color for distinction */
+}
+
+.statistics .row {
+    display: flex; /* Make items align horizontally */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 3rem; /* Add space between the stats */
+}
+
+.statistics .stat-box {
+    flex: 1; /* Ensure equal width for all stat boxes */
+    max-width: 200px; /* Restrict the width of each stat box */
+}
+
+.statistics .stat-number {
+    font-size: 2rem; /* Reduced font size for numbers */
+    font-weight: bold;
+    color: #000000; /* Highlighted number color */
+    margin-bottom: 0.5rem; /* Adds space below numbers */
+}
+
+.statistics p {
+    font-size: 1rem; /* Reduced font size for descriptions */
+    color: #555; /* Description text color */
+    line-height: 1.6; /* Better text readability */
+}
+
+
+
+
+/* Call-to-Action (CTA) Section */
 .cta {
-    background: linear-gradient(135deg, #edf6f9, #e9f5f5); /* Matches the supporters' section background */
-    color: #264653; /* Text color for readability */
+    background-color: #ffffff; /* Matches the supporters' section background */
+    color: #000000; /* Text color for readability */
     text-align: center;
     padding: 4rem 2rem; /* Balanced padding */
     border-radius: 15px; /* Maintain consistent rounded corners */
@@ -180,7 +607,7 @@ section {
     font-family: 'Poppins', sans-serif; /* Consistent font */
     font-size: 2.5rem; /* Header size */
     margin-bottom: 1.5rem;
-    color: #264653; /* Matches text color of the supporters' section */
+    color: #000000; /* Matches text color of the supporters' section */
     text-shadow: none; /* Remove unnecessary text shadow */
 }
 
@@ -188,7 +615,7 @@ section {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #264653; /* Matches text color of the supporters' section */
+    color: #000000; /* Matches text color of the supporters' section */
 }
 
 .cta button {
@@ -215,91 +642,56 @@ section {
 }
 
 
-/* Services Section */
-.services .card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.services .card:hover {
-    transform: scale(1.05);
-}
-
 /* Testimonials Section */
 .testimonials {
-    background: linear-gradient(135deg, #edf6f9, #e9f5f5);
-    border-radius: 15px;
-    padding: 5rem 2rem;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
     margin-top: 4rem;
-    margin-bottom: 4rem; /* Add spacing from adjacent sections */
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 4rem;
     text-align: center;
 }
 
 .testimonials .section-title {
-    font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    color: #264653;
     margin-bottom: 2rem;
+    color: #000000;
 }
 
-.testimonials .testimonial {
-    background-color: #ffffff;
+.testimonials .carousel-inner {
+    padding: 2rem;
+}
+
+.testimonial-content {
+    background: #ffffff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #264653; /* Consistent text color */
-    text-align: left;
-    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.testimonials .testimonial:before {
-    content: "\201C";
-    font-size: 3rem;
-    color: #2a9d8f;
-    position: absolute;
-    top: -20px;
-    left: 20px;
-}
-
-.testimonials .testimonial p {
-    margin: 0;
+.testimonial-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
     font-style: italic;
+    line-height: 1.8;
 }
 
-.testimonials .testimonial .author {
-    margin-top: 1rem;
+.testimonial-content h5 {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #264653; /* Consistent text color */
-    text-align: right;
+    color: #264653;
+    margin-bottom: 0.5rem;
 }
 
-/* FAQ Section */
-.faq {
-    background-color: #edf6f9;
-    border-radius: 10px;
-    padding: 3rem;
+.testimonial-content span {
+    font-size: 1rem;
+    color: #555;
 }
 
-.faq-item {
-    margin-bottom: 1.5rem;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
 
+/* Footer Section */
 footer {
-    background-color: #2a9d8f; /* Matches navbar color */
+    background-color: #005f46; /* Matches navbar color */
     color: white;
     padding: 1rem 0; /* Reduced padding */
     text-align: center;
@@ -324,21 +716,33 @@ footer {
     font-size: 0.9rem; /* Adjusted font size */
 }
 
+/* Social Icons */
 .footer-social .social-icons {
     display: flex;
     justify-content: center;
-    gap: 0.5rem; /* Reduced spacing between icons */
-    font-size: 1.2rem; /* Adjusted icon size */
+    gap: 1rem; /* Increased spacing between icons */
+    font-size: 2rem; /* Larger icon size */
 }
 
 .footer-social .social-icons a {
-    color: #f4f4f4;
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: #ffffff; /* White color for icons */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
 .footer-social .social-icons a:hover {
-    transform: scale(1.1); /* Subtle hover effect */
-    color: #f4a261; /* Matches hover color of navbar items */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    color: #f4a261; /* Optional hover color */
+}
+
+/* Links Styling */
+footer a {
+    color: #ffffff; /* White color for links */
+    text-decoration: none; /* Optional: Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: #f4a261; /* Optional hover color */
 }
 
 .footer-rights {
@@ -347,18 +751,6 @@ footer {
     color: #ffffff;
 }
 
-
-/* Animations */
-.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 @keyframes pulse {
     0%, 100% {
@@ -465,7 +857,7 @@ footer {
     }
 
     .projects .project-card {
-        padding: 1rem;
+        padding: 1rem; /* Compact project card layout */
         font-size: 1rem; /* Adjust project card text */
         margin: 1rem auto; /* Center-align project cards */
         max-width: 90%; /* Fit within screen width */
@@ -481,6 +873,7 @@ footer {
         text-align: center; /* Center-align text in project cards */
     }
 }
+
 
 /* Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
@@ -577,3 +970,14 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .statistics .row {
+        flex-direction: column; /* Stack items vertically */
+        gap: 2rem; /* Add space between items */
+    }
+
+    .statistics .stat-box {
+        margin: 0 auto; /* Center-align each stat box */
+        text-align: center; /* Center the content */
+    }
+}

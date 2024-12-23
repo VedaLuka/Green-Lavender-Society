@@ -2,10 +2,52 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const targetId = this.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        const offset = document.querySelector('header').offsetHeight || 100;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
             behavior: 'smooth'
         });
+
+        // Close navbar when clicking a link
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show'); // Close the menu
+            navbarToggler.setAttribute('aria-expanded', 'false'); // Sync aria-expanded
+        }
     });
+});
+
+
+// Ensure the navbar toggler toggles the menu open and closed
+document.querySelector('.navbar-toggler').addEventListener('click', function () {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    // Check the current state and toggle appropriately
+    if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show'); // Close the menu
+        this.setAttribute('aria-expanded', 'false'); // Update aria-expanded
+    } else {
+        navbarCollapse.classList.add('show'); // Open the menu
+        this.setAttribute('aria-expanded', 'true'); // Update aria-expanded
+    }
+});
+
+// Close Navbar When Clicking Outside (Optional for Better UX)
+document.addEventListener('click', (event) => {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const isClickInside = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
+
+    if (!isClickInside && navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show'); // Close the menu
+        navbarToggler.setAttribute('aria-expanded', 'false'); // Sync aria-expanded
+    }
 });
 
 // Scroll-triggered Animations
@@ -32,27 +74,6 @@ if (carousel) {
         pause: 'hover'
     });
 }
-
-// Highlight Active Navbar Links on Scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Back-to-Top Button
 const backToTopButton = document.createElement('button');
@@ -105,7 +126,7 @@ if (ctaButton) {
     ctaButton.addEventListener('mouseout', () => {
         ctaButton.style.boxShadow = 'none';
     });
-}
+};
 
 // Gallery Lightbox (Optional Feature)
 const galleryImages = document.querySelectorAll('.gallery img');
