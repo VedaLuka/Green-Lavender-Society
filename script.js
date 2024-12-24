@@ -169,4 +169,6 @@ galleryImages.forEach(image => {
 
         document.body.appendChild(lightbox);
     });
+
+    
 });
