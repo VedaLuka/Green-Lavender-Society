@@ -538,7 +538,6 @@ header .navbar-collapse .nav-link:hover::after {
     font-size: 2rem;
     text-align: center;
     color: #000000;
-    
 }
 
 .associated-companies .company-card {
@@ -546,11 +545,20 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .associated-companies .company-card img {
-    margin-bottom: 1rem; /* Space between image and text */
+    margin-bottom: 2rem; /* Increased space between image and text */
 }
 
 .associated-companies .company-card h5 {
     margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+
+.associated-companies .row .col-md-6 img {
+    margin-bottom: 2rem; /* Add space between image and the next element (h3) */
+}
+
+.associated-companies .row .col-md-6 h3 {
+    margin-top: 0; /* Optional: Ensure no unnecessary margin above the heading */
 }
 
 
@@ -595,6 +603,18 @@ header .navbar-collapse .nav-link:hover::after {
     line-height: 1.6; /* Better text readability */
 }
 
+
+/* Center Align for Phones */
+@media (max-width: 768px) {
+    .statistics .row {
+        flex-direction: column; /* Stack items vertically */
+        gap: 2rem; /* Adjust gap between items */
+    }
+
+    .statistics .stat-box {
+        max-width: 100%; /* Allow stat boxes to take full width */
+    }
+}
 
 .location {
     padding: 4rem 1rem;
