@@ -447,6 +447,8 @@ header .navbar-collapse .nav-link:hover::after {
     justify-self: center; /* Center the item horizontally */
 }
 
+
+
 /* Adjustments for phone screens */
 @media (max-width: 768px) {
     .objectives {
