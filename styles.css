@@ -799,6 +799,13 @@ footer a:hover {
     animation: pulse 1.5s infinite ease-in-out;
 }
 
+
+
+
+
+
+
+
 /* General Responsive Rules */
 @media (max-width: 768px) {
     body {
@@ -808,31 +815,6 @@ footer a:hover {
         text-align: center; /* Center-align text globally */
     }
 
-    header {
-        padding: 0.5rem 0;
-        text-align: center; /* Center-align header content */
-    }
-
-    header .navbar {
-        flex-direction: column; /* Stack navigation links */
-        align-items: center;
-    }
-
-    header .navbar-brand {
-        font-size: 1.4rem; /* Reduce size of brand name */
-    }
-
-    header .navbar-brand img {
-        width: 70px; /* Smaller logo for mobile screens */
-        height: auto;
-        margin-bottom: 0.5rem;
-    }
-
-    header .nav-link {
-        margin: 0.5rem 0; /* Add vertical spacing between links */
-        font-size: 1rem;
-        text-align: center;
-    }
 
     .hero {
         height: 400px; /* Reduce hero height */
@@ -909,109 +891,3 @@ footer a:hover {
 }
 
 
-/* Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-    header {
-        padding: 0.5rem 0;
-        text-align: center; /* Ensure all header elements are centered */
-    }
-
-    header .navbar {
-        flex-direction: column; /* Fully stack links */
-        align-items: center;
-    }
-
-    header .nav-link {
-        font-size: 0.9rem; /* Reduce font size further */
-        margin: 0.4rem 0; /* Adjust spacing */
-    }
-
-    .hero {
-        height: 300px; /* Further reduce height */
-        padding: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem; /* Adjust heading size */
-    }
-
-    .hero p {
-        font-size: 0.9rem; /* Adjust text size */
-    }
-
-    section {
-        padding: 1.5rem 1rem; /* Reduce section padding */
-        text-align: center; /* Ensure center alignment */
-    }
-
-    .section-title {
-        font-size: 1.5rem; /* Adjust title size */
-    }
-
-    .cta button {
-        font-size: 0.9rem; /* Smaller button size */
-        padding: 0.6rem 1.5rem;
-        width: 100%; /* Full width button */
-        margin: 1rem auto;
-    }
-
-    .testimonials .testimonial {
-        padding: 0.8rem; /* Adjust testimonial padding */
-        font-size: 0.9rem; /* Adjust text size */
-        margin: 0 auto; /* Center-align testimonials */
-    }
-
-    .testimonials .testimonial p {
-        font-size: 0.85rem; /* Smaller paragraph text */
-    }
-
-    .projects .project-card {
-        padding: 0.8rem; /* Compact project card layout */
-        font-size: 0.9rem;
-        margin: 1rem auto; /* Center-align project cards */
-    }
-
-    .projects .project-card h3 {
-        font-size: 1.2rem; /* Smaller project heading */
-    }
-
-    .projects .project-card p {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        text-align: center; /* Center-align text in project cards */
-    }
-}
-
-/* Images and Media */
-@media (max-width: 768px) {
-    img {
-        max-width: 100%; /* Ensure images do not overflow */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto; /* Center-align images */
-    }
-}
-
-/* Footer */
-@media (max-width: 768px) {
-    footer {
-        padding: 1rem;
-        font-size: 0.9rem; /* Smaller footer text */
-        text-align: center; /* Center-align footer content */
-    }
-
-    footer a {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .statistics .row {
-        flex-direction: column; /* Stack items vertically */
-        gap: 2rem; /* Add space between items */
-    }
-
-    .statistics .stat-box {
-        margin: 0 auto; /* Center-align each stat box */
-        text-align: center; /* Center the content */
-    }
-}

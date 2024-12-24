@@ -24,31 +24,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// Ensure the navbar toggler toggles the menu open and closed
+// Ensure the navbar toggler toggles the menu open and closed smoothly
 document.querySelector('.navbar-toggler').addEventListener('click', function () {
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
-    // Check the current state and toggle appropriately
+    // Avoid any animation glitch by toggling a 'hidden' class first
     if (navbarCollapse.classList.contains('show')) {
-        navbarCollapse.classList.remove('show'); // Close the menu
+        navbarCollapse.classList.add('hiding'); // Add a temporary class for hiding animation
+        setTimeout(() => {
+            navbarCollapse.classList.remove('show', 'hiding'); // Remove the classes after animation
+        }, 300); // Match this duration to your CSS transition time
         this.setAttribute('aria-expanded', 'false'); // Update aria-expanded
     } else {
-        navbarCollapse.classList.add('show'); // Open the menu
+        navbarCollapse.classList.add('showing'); // Add a temporary class for showing animation
+        setTimeout(() => {
+            navbarCollapse.classList.remove('showing'); // Remove the temporary class
+            navbarCollapse.classList.add('show'); // Keep the menu open
+        }, 10); // Short delay to allow for smooth animation
         this.setAttribute('aria-expanded', 'true'); // Update aria-expanded
     }
 });
 
-// Close Navbar When Clicking Outside (Optional for Better UX)
+// Close Navbar When Clicking Outside
 document.addEventListener('click', (event) => {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const navbarToggler = document.querySelector('.navbar-toggler');
     const isClickInside = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
 
     if (!isClickInside && navbarCollapse.classList.contains('show')) {
-        navbarCollapse.classList.remove('show'); // Close the menu
-        navbarToggler.setAttribute('aria-expanded', 'false'); // Sync aria-expanded
+        navbarCollapse.classList.add('hiding');
+        setTimeout(() => {
+            navbarCollapse.classList.remove('show', 'hiding');
+            navbarToggler.setAttribute('aria-expanded', 'false');
+        }, 300);
     }
 });
+
 
 // Scroll-triggered Animations
 document.addEventListener("DOMContentLoaded", () => {
