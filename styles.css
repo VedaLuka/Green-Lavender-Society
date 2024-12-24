@@ -441,7 +441,9 @@ header .navbar-collapse .nav-link:hover::after {
 .environment-news .section-title {
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 3rem; /* Add space below the title */
 }
+
 
 .featured-news {
     display: flex;
@@ -529,7 +531,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 
 .associated-companies {
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 4rem;
 }
 
@@ -564,7 +566,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .statistics {
     padding: 4rem 1rem; /* Adequate padding inside the section */
-    margin-top: 6rem; /* Adds space above the section */
+    margin-top: 3rem; /* Reduced margin to move the section up */
     margin-bottom: 6rem; /* Adds space below the section */
     background: linear-gradient(135deg, #bbbbbb, #ffffff); /* Gradient background */
     border-radius: 15px; /* Smooth corners */
@@ -574,7 +576,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .statistics .section-title {
     font-size: 2rem; /* Reduced font size for the section title */
-    margin-bottom: 2rem; /* Space below the section title */
+    margin-bottom: 3rem; /* Increased space below the title */
     color: #000000; /* Title color for distinction */
 }
 
@@ -767,7 +769,7 @@ footer {
 
 .footer-contact p, .footer-social h3 {
     margin: 0.3rem 0; /* Compact spacing */
-    font-size: 0.9rem; /* Adjusted font size */
+    font-size: 1.4rem; /* Adjusted font size */
 }
 
 /* Social Icons */
@@ -775,7 +777,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 1rem; /* Increased spacing between icons */
-    font-size: 2rem; /* Larger icon size */
+    font-size: 3rem; /* Larger icon size */
 }
 
 .footer-social .social-icons a {
