@@ -362,34 +362,53 @@ header .navbar-collapse .nav-link:hover::after {
     border-radius: 15px;
     padding: 4rem 2rem;
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
-    margin-top: 2rem;
-    margin-bottom: 4rem; /* Add spacing from previous section */
-    text-align: center;
+    margin-top: 2rem; /* Move the section higher */
+    margin-bottom: 4rem; /* Add spacing from the next section */
+    text-align: center; /* Center-align all text */
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.about img {
-    width: 150px; /* Larger logo */
+.about-header {
+    display: flex;
+    flex-direction: column; /* Stack logo and title vertically */
+    align-items: center; /* Center-align content */
+    margin-bottom: 2rem; /* Space below header */
+}
+
+.about-logo {
+    width: 250px;
     height: auto;
-    margin-bottom: 1.5rem;
+    margin-top: -8rem;
+    margin-bottom: -3rem; /* Reduce space below logo */
     border-radius: 50%;
 }
 
 .about h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    color: #000000; /* Consistent text color */
-    margin-bottom: 1rem;
+    color: #000000;
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Ensure the heading is centered */
 }
 
 .about p {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #000000; /* Updated for consistency */
-    text-align: justify;
+    text-align: center; /* Center-align paragraphs */
+    margin: 0 auto; /* Center block elements */
 }
+
+.about h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    text-align: center; /* Center-align subheadings */
+}
+
 
 
 .objectives {
@@ -610,7 +629,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .associated-companies {
     margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: -2rem;
 }
 
 .associated-companies .section-title {
