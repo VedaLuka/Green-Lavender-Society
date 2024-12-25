@@ -277,10 +277,16 @@ header .navbar-collapse .nav-link:hover::after {
 
 .hero h1 {
     z-index: 2;
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Larger font for better emphasis */
+    font-weight: 700; /* Maintain boldness but with precise control */
+    margin-bottom: 1.2rem; /* Slightly increased spacing for a cleaner look */
+    line-height: 1.3; /* Balanced line height for readability */
+    color: #ffffff; /* A subtle dark gray for softer contrast */
+    text-align: center; /* Align the text to the center */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    letter-spacing: 0.05em; /* Slightly spaced letters for elegance */
 }
+
 
 .hero p {
     z-index: 2;
