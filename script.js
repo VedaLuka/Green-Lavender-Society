@@ -24,6 +24,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+
+
+
 // Ensure the navbar toggler toggles the menu open and closed smoothly
 document.querySelector('.navbar-toggler').addEventListener('click', function () {
     const navbarCollapse = document.querySelector('.navbar-collapse');

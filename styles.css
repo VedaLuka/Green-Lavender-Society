@@ -2,15 +2,16 @@
 body {
     font-family: 'Roboto', sans-serif; /* Professional font */
     line-height: 1.6;
-    background-color: #e8e8e8;
+    background-color: #e4e4e4;
     color: #000000; /* Consistent text color */
     margin: 0;
     padding: 0;
 }
 
+/* Header Section */ 
 /* Header Section */
 header {
-    background-color: #005f46; /* Dark green background */
+    background-color: #735589; /* Dark green background */
     color: white;
     padding: 0.5rem 1rem; /* Reduced padding for a more compact navbar */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -34,7 +35,7 @@ header .navbar-brand {
     display: flex;
     align-items: center; /* Vertically align logo and text */
     font-size: 1.5rem; /* Adjust font size for better visibility */
-    color: white;
+    color: white; /* Static white color */
     text-transform: uppercase;
     font-weight: bold;
     margin: 0; /* Remove extra margin */
@@ -43,8 +44,16 @@ header .navbar-brand {
     text-overflow: ellipsis; /* Add ellipsis for truncated titles */
     flex-shrink: 0; /* Ensure the title doesn't shrink */
     margin-right: 1rem; /* Add space between title/logo and links */
+    cursor: default; /* Remove clickable behavior */
+    text-decoration: none; /* Remove underline or default link styles */
 }
 
+/* Remove hover effect on title */
+header .navbar-brand:hover {
+    color: white; /* Ensure color doesn't change on hover */
+}
+
+/* Brand Logo Styling */
 header .navbar-brand img {
     width: 70px !important; /* Adjust logo size */
     height: auto !important; /* Maintain aspect ratio */
@@ -411,6 +420,31 @@ header .navbar-collapse .nav-link:hover::after {
 
 
 
+/* Video Section */
+.video-display .section-title {
+    font-size: 2rem; /* Standard font size for the title */
+    margin-bottom: 1.5rem; /* Add space below the title */
+    color: #000000; /* Neutral text color for the title */
+    text-align: center; /* Center-align the title */
+}
+
+.video-player {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 400px; /* Smaller maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the video */
+    display: block; /* Ensure it's treated as a block element */
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Adjust the section layout */
+.video-display {
+    padding: 2rem 1rem; /* Balanced padding for the section */
+}
+
+
+
 .objectives {
     margin: 4rem auto; /* Centers the section horizontally */
     background: #ffffff;
@@ -438,7 +472,7 @@ header .navbar-collapse .nav-link:hover::after {
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(106, 13, 173, 0.2); /* Purple shadow on hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center; /* Centers text inside each card */
 }
@@ -457,7 +491,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .objective-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(106, 13, 173, 0.2); /* Purple shadow on hover */
 }
 
 /* Center the last item if it's alone in a row */
@@ -498,6 +532,14 @@ header .navbar-collapse .nav-link:hover::after {
     margin-bottom: 6rem;
 }
 
+.projects .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
 .projects .project-card {
     margin-bottom: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -505,7 +547,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .projects .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 16px rgba(106, 13, 173, 0.2); /* Purple shadow on hover */
 }
 
 .projects .section-title {
@@ -625,45 +667,91 @@ header .navbar-collapse .nav-link:hover::after {
     color: #e76f51;
 }
 
-
-
+/* Associated Companies Section */
 .associated-companies {
-    margin-top: 3rem;
-    margin-bottom: -2rem;
+    background-color: #ffffffc7; /* Light purple background */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 3rem 2rem; /* Balanced padding */
+    margin-top: 4rem;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .associated-companies .section-title {
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Larger title for emphasis */
+    font-weight: bold;
     text-align: center;
-    color: #000000;
+    color: #000000; /* Purple title color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.associated-companies .company-card {
-    margin-bottom: 2rem; /* Space between individual cards */
+/* Company Cards */
+.company-card {
+    background-color: #edebeb; /* White card background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1.5rem;
+    text-align: center; /* Center align content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
-.associated-companies .company-card img {
-    margin-bottom: 2rem; /* Increased space between image and text */
+.company-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 8px 16px rgba(106, 13, 173, 0.2); /* Purple shadow on hover */
 }
 
-.associated-companies .company-card h5 {
-    margin-bottom: 0.5rem; /* Space between title and description */
+.company-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ensure image stays proportional */
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Image shadow */
+}
+
+.company-card h3 {
+    font-size: 1.5rem; /* Emphasize company name */
+    color: #040404; /* Purple text for titles */
+    margin-bottom: 0.5rem;
+}
+
+.company-card p {
+    font-size: 1rem; /* Standard font size for description */
+    color: #555555; /* Neutral gray for text */
+    margin: 0;
 }
 
 
-.associated-companies .row .col-md-6 img {
-    margin-bottom: 2rem; /* Add space between image and the next element (h3) */
+@media (max-width: 768px) {
+    .associated-companies .row {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 1.5rem; /* Add spacing between rows */
+    }
+
+    .company-card {
+        margin-bottom: 1.5rem; /* Adjust spacing between cards */
+        padding: 1rem; /* Reduce padding for a more compact design */
+    }
+
+    .company-card img {
+        width: 80px; /* Smaller image size */
+        height: 80px;
+    }
+
+    .company-card h3 {
+        font-size: 1.25rem; /* Slightly smaller text for titles */
+    }
+
+    .company-card p {
+        font-size: 0.9rem; /* Smaller text for description */
+    }
 }
 
-.associated-companies .row .col-md-6 h3 {
-    margin-top: 0; /* Optional: Ensure no unnecessary margin above the heading */
-}
 
 
 .statistics {
     padding: 4rem 1rem; /* Adequate padding inside the section */
-    margin-top: 3rem; /* Reduced margin to move the section up */
+    margin-top: 7rem; /* Reduced margin to move the section up */
     margin-bottom: 6rem; /* Adds space below the section */
     background: linear-gradient(135deg, #bbbbbb, #ffffff); /* Gradient background */
     border-radius: 15px; /* Smooth corners */
@@ -842,39 +930,46 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 
-/* Footer Section */
 footer {
-    background-color: #005f46; /* Matches navbar color */
+    background-color: #735589; /* Matches navbar color */
     color: white;
-    padding: 1rem 0; /* Reduced padding */
+    padding: 0.5rem 0; /* Reduced padding for a thinner footer */
     text-align: center;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 1rem; /* Slightly smaller font size */
 }
+
+.footer-contact h3 {
+    font-size: 1.2rem; /* Smaller font size for اتصل بنا */
+    margin: 0.2rem 0; /* Compact spacing */
+    color: #ffffff; /* Ensure it remains white for visibility */
+}
+
+
 
 .footer-container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: center;
     align-items: center;
-    gap: 1rem; /* Reduced gap */
+    gap: 0.5rem; /* Reduced gap for compact layout */
 }
 
 .footer-contact, .footer-social {
-    margin: 0; /* Removed extra margin */
+    margin: 0; /* No extra margin */
     text-align: center; /* Center-align content */
 }
 
 .footer-contact p, .footer-social h3 {
-    margin: 0.3rem 0; /* Compact spacing */
-    font-size: 1.4rem; /* Adjusted font size */
+    margin: 0.2rem 0; /* Reduced compact spacing */
+    font-size: 1rem; /* Adjusted font size for a thinner appearance */
 }
 
 /* Social Icons */
 .footer-social .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Increased spacing between icons */
-    font-size: 3rem; /* Larger icon size */
+    gap: 0.5rem; /* Reduced spacing between icons */
+    font-size: 1.8rem; /* Slightly smaller icon size */
 }
 
 .footer-social .social-icons a {
@@ -883,14 +978,14 @@ footer {
 }
 
 .footer-social .social-icons a:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
+    transform: scale(1.1); /* Subtle zoom effect on hover */
     color: #f4a261; /* Optional hover color */
 }
 
 /* Links Styling */
 footer a {
     color: #ffffff; /* White color for links */
-    text-decoration: none; /* Optional: Remove underline */
+    text-decoration: none; /* Remove underline */
     transition: color 0.3s ease; /* Smooth hover effect */
 }
 
@@ -899,8 +994,8 @@ footer a:hover {
 }
 
 .footer-rights {
-    margin-top: 1rem; /* Slight spacing for separation */
-    font-size: 0.8rem; /* Smaller text for copyright */
+    margin-top: 0.5rem; /* Reduced spacing for separation */
+    font-size: 0.75rem; /* Smaller text for copyright */
     color: #ffffff;
 }
 
