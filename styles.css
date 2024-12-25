@@ -21,13 +21,11 @@ header {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Navbar Container */
+/* Navbar Container Adjustment */
 header .navbar {
-    display: flex;
-    align-items: center; /* Vertically align all elements */
-    justify-content: space-between; /* Space out title and menu */
-    padding: 0; /* Remove extra padding */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center; /* Ensure vertical alignment remains consistent */
+    padding: 0; /* Keep the existing padding */
+    height: 80px; /* Fixed navbar height to prevent resizing */
 }
 
 /* Brand Title and Logo */
@@ -55,10 +53,14 @@ header .navbar-brand:hover {
 
 /* Brand Logo Styling */
 header .navbar-brand img {
-    width: 70px !important; /* Adjust logo size */
-    height: auto !important; /* Maintain aspect ratio */
-    margin-right: 0.5rem !important; /* Reduced space between logo and text */
+    width: 100px !important; /* Increase the width for a larger logo */
+    height: 200px !important; /* Maintain aspect ratio */
+    margin-left: -1.5rem !important; /* Push logo to the right */
+    margin-top: -0.75rem;
+    object-fit: contain; /* Ensure logo fits well without distortion */
+    max-height: 150px; /* Constrain height to avoid affecting navbar size */
 }
+
 
 /* Navbar Links */
 header .navbar-nav {
