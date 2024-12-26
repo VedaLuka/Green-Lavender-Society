@@ -32,7 +32,7 @@ header .navbar {
 header .navbar-brand {
     display: flex;
     align-items: center; /* Vertically align logo and text */
-    font-size: 1.5rem; /* Adjust font size for better visibility */
+    font-size: 2rem; /* Adjust font size for better visibility */
     color: white; /* Static white color */
     text-transform: uppercase;
     font-weight: bold;
@@ -42,6 +42,7 @@ header .navbar-brand {
     text-overflow: ellipsis; /* Add ellipsis for truncated titles */
     flex-shrink: 0; /* Ensure the title doesn't shrink */
     margin-right: 1rem; /* Add space between title/logo and links */
+    margin-left: -4rem;
     cursor: default; /* Remove clickable behavior */
     text-decoration: none; /* Remove underline or default link styles */
 }
@@ -52,14 +53,17 @@ header .navbar-brand:hover {
 }
 
 /* Brand Logo Styling */
+/* Brand Logo Styling */
 header .navbar-brand img {
-    width: 100px !important; /* Increase the width for a larger logo */
-    height: 200px !important; /* Maintain aspect ratio */
-    margin-left: -1.5rem !important; /* Push logo to the right */
-    margin-top: -0.75rem;
-    object-fit: contain; /* Ensure logo fits well without distortion */
-    max-height: 150px; /* Constrain height to avoid affecting navbar size */
+    width: 150px !important; /* Increased width for a larger logo */
+    height: auto !important; /* Maintain aspect ratio */
+    margin-left: -1rem !important; /* Adjust margin for proper alignment */
+    margin-top: -1.2rem; /* Adjust top margin for better positioning */
+    object-fit: contain; /* Ensure the logo fits without distortion */
+    max-height: 200px; /* Increase maximum height to allow for a larger logo */
+
 }
+
 
 
 /* Navbar Links */
@@ -306,6 +310,29 @@ header .navbar-collapse .nav-link:hover::after {
     margin-top: 4rem;
 }
 
+.initiatives .section-title {
+    font-size: 2.5rem; /* Adjusted size for the section title */
+    margin-bottom: 2rem; /* Ensure proper spacing */
+    color: #000000; /* Title color */
+    text-align: center; /* Center-align the title */
+}
+
+.initiatives h3 {
+    font-size: 2rem; /* Adjusted size for headers within initiatives */
+    color: #264653; /* Dark green for distinction */
+    margin: 1.5rem 0; /* Even spacing above and below */
+    text-align: left; /* Align to left for better readability */
+}
+
+.initiatives p {
+    font-size: 1.6rem; /* Adjusted size for paragraphs */
+    line-height: 1.6; /* Ensure readability */
+    color: #555555; /* Paragraph text color */
+    margin: 1rem 0; /* Consistent spacing above and below */
+}
+
+
+
 .timeline {
     display: flex;
     flex-direction: column;
@@ -395,10 +422,10 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .about-logo {
-    width: 250px;
+    width: 300px;
     height: auto;
     margin-top: -8rem;
-    margin-bottom: -3rem; /* Reduce space below logo */
+    margin-bottom: -4rem; /* Adjust spacing for consistent margins */
     border-radius: 50%;
 }
 
@@ -406,50 +433,26 @@ header .navbar-collapse .nav-link:hover::after {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     color: #000000;
-    margin: 0; /* Remove default margin */
+    margin: 0.3rem 0; /* Even spacing above and below */
     text-align: center; /* Ensure the heading is centered */
 }
 
 .about p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.8;
     color: #000000; /* Updated for consistency */
     text-align: center; /* Center-align paragraphs */
-    margin: 0 auto; /* Center block elements */
+    margin: 1.5rem 0; /* Even spacing above and below */
 }
 
 .about h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: #000000;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0; /* Even spacing above and below */
     text-align: center; /* Center-align subheadings */
 }
 
-
-
-/* Video Section */
-.video-display .section-title {
-    font-size: 2rem; /* Standard font size for the title */
-    margin-bottom: 1.5rem; /* Add space below the title */
-    color: #000000; /* Neutral text color for the title */
-    text-align: center; /* Center-align the title */
-}
-
-.video-player {
-    width: 100%; /* Full width for responsiveness */
-    max-width: 400px; /* Smaller maximum width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the video */
-    display: block; /* Ensure it's treated as a block element */
-    border-radius: 15px; /* Smooth rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-
-/* Adjust the section layout */
-.video-display {
-    padding: 2rem 1rem; /* Balanced padding for the section */
-}
 
 
 
@@ -486,13 +489,13 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .objective-item h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: #000000;
     margin-bottom: 0.5rem;
 }
 
 .objective-item p {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     color: #000000;
     line-height: 1.6;
 }
@@ -551,6 +554,7 @@ header .navbar-collapse .nav-link:hover::after {
 .projects .project-card {
     margin-bottom: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .projects .project-card:hover {
@@ -709,22 +713,23 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .company-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover; /* Ensure image stays proportional */
-    border-radius: 50%; /* Circular images */
-    margin-bottom: 1rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Image shadow */
+    width: 200px; /* Set the desired image size */
+    height: 200px; /* Maintain a square aspect ratio */
+    object-fit: cover; /* Ensure the image is not distorted */
+    border: none; /* Remove the border */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it behaves like a block-level element */
 }
 
+
 .company-card h3 {
-    font-size: 1.5rem; /* Emphasize company name */
+    font-size: 2rem; /* Emphasize company name */
     color: #040404; /* Purple text for titles */
     margin-bottom: 0.5rem;
 }
 
 .company-card p {
-    font-size: 1rem; /* Standard font size for description */
+    font-size: 1.6rem; /* Standard font size for description */
     color: #555555; /* Neutral gray for text */
     margin: 0;
 }
@@ -742,16 +747,16 @@ header .navbar-collapse .nav-link:hover::after {
     }
 
     .company-card img {
-        width: 80px; /* Smaller image size */
-        height: 80px;
+        width: 200px; /* Smaller image size */
+        height: 200px;
     }
 
     .company-card h3 {
-        font-size: 1.25rem; /* Slightly smaller text for titles */
+        font-size: 2rem; /* Slightly smaller text for titles */
     }
 
     .company-card p {
-        font-size: 0.9rem; /* Smaller text for description */
+        font-size: 1.6rem; /* Smaller text for description */
     }
 }
 
@@ -768,7 +773,7 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .statistics .section-title {
-    font-size: 2rem; /* Reduced font size for the section title */
+    font-size: 2.5rem; /* Reduced font size for the section title */
     margin-bottom: 3rem; /* Increased space below the title */
     color: #000000; /* Title color for distinction */
 }
@@ -793,7 +798,7 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .statistics p {
-    font-size: 1rem; /* Reduced font size for descriptions */
+    font-size: 1.6rem; /* Reduced font size for descriptions */
     color: #555; /* Description text color */
     line-height: 1.6; /* Better text readability */
 }
@@ -821,7 +826,7 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .location .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #000000;
     margin-bottom: 1.5rem;
@@ -861,7 +866,7 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .cta p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.8;
     margin-bottom: 2rem;
     color: #000000; /* Matches text color of the supporters' section */
@@ -888,53 +893,6 @@ header .navbar-collapse .nav-link:hover::after {
 .cta button:active {
     transform: translateY(0); /* Reset on click */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Testimonials Section */
-.testimonials {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    text-align: center;
-}
-
-.testimonials .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-.testimonials .carousel-inner {
-    padding: 2rem;
-}
-
-.testimonial-content {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.testimonial-content p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1rem;
-    font-style: italic;
-    line-height: 1.8;
-}
-
-.testimonial-content h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #264653;
-    margin-bottom: 0.5rem;
-}
-
-.testimonial-content span {
-    font-size: 1rem;
-    color: #555;
 }
 
 
@@ -1059,7 +1017,7 @@ footer a:hover {
     }
 
     .about img {
-        width: 120px; /* Smaller logo size in About section */
+        width: 250px; /* Smaller logo size in About section */
         margin: 0 auto; /* Center-align the image */
     }
 
