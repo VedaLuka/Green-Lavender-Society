@@ -229,6 +229,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 
 /* Responsive Adjustments */
+/* Responsive Adjustments */
 @media (max-width: 992px) {
     /* Navbar for smaller screens */
     header .navbar {
@@ -239,7 +240,8 @@ header .navbar-collapse .nav-link:hover::after {
     }
 
     header .navbar-toggler {
-        margin-left: auto; /* Push hamburger to the far right */
+        margin-left: 5rem; /* Move hamburger to the left */
+        margin-right: auto; /* Align it closer to the left edge */
         align-self: center; /* Ensure it aligns vertically */
     }
 
@@ -253,6 +255,7 @@ header .navbar-collapse .nav-link:hover::after {
         text-align: center; /* Center-align nav links */
     }
 }
+
 
 
 
