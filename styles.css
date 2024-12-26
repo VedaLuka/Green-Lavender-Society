@@ -827,6 +827,7 @@ header .navbar-collapse .nav-link:hover::after {
 .cta h2 {
     font-family: 'Poppins', sans-serif; /* Consistent font */
     font-size: 2.5rem; /* Header size */
+    font-weight: bold;
     margin-bottom: 1.5rem;
     color: #000000; /* Matches text color of the supporters' section */
     text-shadow: none; /* Remove unnecessary text shadow */
