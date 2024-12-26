@@ -25,7 +25,7 @@ header {
 header .navbar {
     align-items: center; /* Ensure vertical alignment remains consistent */
     padding: 0; /* Keep the existing padding */
-    height: 80px; /* Fixed navbar height to prevent resizing */
+    height: 100px; /* Fixed navbar height to prevent resizing */
 }
 
 /* Brand Title and Logo */
@@ -55,12 +55,12 @@ header .navbar-brand:hover {
 /* Brand Logo Styling */
 /* Brand Logo Styling */
 header .navbar-brand img {
-    width: 150px !important; /* Increased width for a larger logo */
+    width: 200px !important; /* Increased width for a larger logo */
     height: auto !important; /* Maintain aspect ratio */
-    margin-left: -1rem !important; /* Adjust margin for proper alignment */
+    margin-left: -1.4rem !important; /* Adjust margin for proper alignment */
     margin-top: -1.2rem; /* Adjust top margin for better positioning */
     object-fit: contain; /* Ensure the logo fits without distortion */
-    max-height: 200px; /* Increase maximum height to allow for a larger logo */
+    max-height: 265px; /* Increase maximum height to allow for a larger logo */
 
 }
 
@@ -444,9 +444,9 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .about-logo {
-    width: 300px;
+    width: 400px;
     height: auto;
-    margin-top: -8rem;
+    margin-top: -13rem;
     margin-bottom: -4rem; /* Adjust spacing for consistent margins */
     border-radius: 50%;
 }
@@ -990,8 +990,9 @@ footer a:hover {
     }
 
     .about img {
-        width: 250px; /* Smaller logo size in About section */
+        width: 300px; /* Smaller logo size in About section */
         margin: 0 auto; /* Center-align the image */
+        margin-top: 0; /* Remove top margin */
     }
 
 
