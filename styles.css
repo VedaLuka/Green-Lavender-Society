@@ -832,6 +832,16 @@ header .navbar-collapse .nav-link:hover::after {
     margin-bottom: 1.5rem;
 }
 
+.location p {
+    font-size: 1.6rem; /* Set the paragraph size */
+    line-height: 1.8; /* Adjust for readability */
+    color: #000000; /* Ensure text color consistency */
+    text-align: center; /* Center the text */
+    margin: 1rem 0; /* Add some vertical spacing */
+}
+
+
+
 .map-container {
     width: 100%;
     height: 450px;
