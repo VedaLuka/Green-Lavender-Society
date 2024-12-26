@@ -25,14 +25,14 @@ header {
 header .navbar {
     align-items: center; /* Ensure vertical alignment remains consistent */
     padding: 0; /* Keep the existing padding */
-    height: 100px; /* Fixed navbar height to prevent resizing */
+    height: 150px; /* Fixed navbar height to prevent resizing */
 }
 
 /* Brand Title and Logo */
 header .navbar-brand {
     display: flex;
     align-items: center; /* Vertically align logo and text */
-    font-size: 2rem; /* Adjust font size for better visibility */
+    font-size: 2.2rem; /* Adjust font size for better visibility */
     color: white; /* Static white color */
     text-transform: uppercase;
     font-weight: bold;
@@ -41,7 +41,7 @@ header .navbar-brand {
     overflow: hidden; /* Prevent overflow if the title is too long */
     text-overflow: ellipsis; /* Add ellipsis for truncated titles */
     flex-shrink: 0; /* Ensure the title doesn't shrink */
-    margin-right: 1rem; /* Add space between title/logo and links */
+    margin-right: 0rem; /* Add space between title/logo and links */
     margin-left: -4rem;
     cursor: default; /* Remove clickable behavior */
     text-decoration: none; /* Remove underline or default link styles */
@@ -57,10 +57,10 @@ header .navbar-brand:hover {
 header .navbar-brand img {
     width: 200px !important; /* Increased width for a larger logo */
     height: auto !important; /* Maintain aspect ratio */
-    margin-left: -1.4rem !important; /* Adjust margin for proper alignment */
+    margin-left: -2.5rem !important; /* Adjust margin for proper alignment */
     margin-top: -1.2rem; /* Adjust top margin for better positioning */
     object-fit: contain; /* Ensure the logo fits without distortion */
-    max-height: 265px; /* Increase maximum height to allow for a larger logo */
+    max-height: 400px; /* Increase maximum height to allow for a larger logo */
 
 }
 
@@ -86,7 +86,7 @@ header .navbar-collapse {
 /* Navbar Links Styling */
 header .nav-link {
     color: #ffffff; /* Ensure links are visible on dark backgrounds */
-    font-size: 0.85rem; /* Slightly smaller font size */
+    font-size: 1rem; /* Slightly smaller font size */
     text-transform: uppercase;
     font-weight: 500;
     padding: 0.2rem 0.3rem; /* Reduced padding for compactness */
@@ -162,6 +162,7 @@ header .navbar-toggler {
 header .navbar-toggler-icon {
     width: 25px; /* Adjust size for better alignment */
     height: 25px;
+    margin-left: -2rem;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
@@ -444,7 +445,7 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .about-logo {
-    width: 400px;
+    width: 450px;
     height: auto;
     margin-top: -13rem;
     margin-bottom: -4rem; /* Adjust spacing for consistent margins */
@@ -981,19 +982,24 @@ footer a:hover {
     }
 
     .about {
-        padding: 1.5rem; /* Compact section padding */
-        margin: 2rem auto; /* Center the section */
-        max-width: 85%; /* Reduce the width for smaller screens */
+        padding: 0; /* Remove all padding inside the .about section */
+        margin: 1rem auto; /* Reduce vertical margin for the section */
+        max-width: 85%; /* Keep the width optimized for smaller screens */
         text-align: center; /* Center-align all text */
-        border-radius: 15px; /* Keep smooth corners */
+        border-radius: 15px; /* Retain smooth corners */
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
     }
-
+    
     .about img {
-        width: 300px; /* Smaller logo size in About section */
-        margin: 0 auto; /* Center-align the image */
-        margin-top: 0; /* Remove top margin */
+        width: 450px; /* Maintain desired size for the logo */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: -10rem; /* Pull the logo closer to the top */
+        margin-bottom: -6rem; /* Keep some space below the logo */
+        margin-left: auto;
+        margin-right: auto; /* Center-align the image */
     }
+    
+    
 
 
     .cta button {
