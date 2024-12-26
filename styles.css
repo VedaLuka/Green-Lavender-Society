@@ -606,6 +606,34 @@ header .navbar-collapse .nav-link:hover::after {
     height: 30px; /* Adjust size */
 }
 
+@media (max-width: 768px) {
+    #photoCarousel .carousel-item img,
+    #photoCarousel .carousel-item video {
+        max-width: 90%; /* Restrict the content to 90% of the container width */
+        max-height: 70vh; /* Restrict the height to 70% of the viewport height */
+        object-fit: contain; /* Ensure the entire content fits within the frame */
+        margin: 0 auto; /* Center the content */
+        display: block; /* Ensure proper centering as a block element */
+    }
+
+    #photoCarousel .carousel-control-prev,
+    #photoCarousel .carousel-control-next {
+        width: 5%; /* Optional: Reduce the arrow container size */
+    }
+
+    #photoCarousel .carousel-control-prev {
+        left: -3%; /* Move the left arrow further to the left */
+    }
+
+    #photoCarousel .carousel-control-next {
+        right: -3%; /* Move the right arrow further to the right */
+    }
+
+}
+
+
+
+
 
 
 /* Associated Companies Section */
@@ -944,6 +972,7 @@ footer a:hover {
     .section-title {
         font-size: 1.8rem; /* Smaller title size */
         margin-bottom: 1.5rem; /* Ensure spacing below titles */
+        font-weight: bold;
     }
 
     .about {
@@ -968,14 +997,6 @@ footer a:hover {
         margin: 1rem auto; /* Center-align button */
     }
 
-    .testimonials .testimonial {
-        padding: 1rem; /* Compact testimonial layout */
-        margin: 0 auto; /* Center-align testimonials */
-    }
-
-    .testimonials .testimonial p {
-        font-size: 1rem; /* Smaller text */
-    }
 
     .projects .project-card {
         padding: 1rem; /* Compact project card layout */
