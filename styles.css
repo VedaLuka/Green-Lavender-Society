@@ -380,6 +380,7 @@ header .navbar-collapse .nav-link:hover::after {
 .timeline-item .timeline-content h3 {
     font-size: 2rem;
     color: #264653;
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
@@ -452,6 +453,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .about h2 {
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     font-size: 2.5rem;
     color: #000000;
     margin: 0.3rem 0; /* Even spacing above and below */
@@ -469,6 +471,7 @@ header .navbar-collapse .nav-link:hover::after {
 .about h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
+    font-weight: bold;
     color: #000000;
     margin: 1.5rem 0; /* Even spacing above and below */
     text-align: center; /* Center-align subheadings */
@@ -681,6 +684,7 @@ header .navbar-collapse .nav-link:hover::after {
 
 .company-card h3 {
     font-size: 2rem; /* Emphasize company name */
+    font-weight: bold;
     color: #040404; /* Purple text for titles */
     margin-bottom: 0.5rem;
 }
