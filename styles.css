@@ -240,7 +240,7 @@ header .navbar-collapse .nav-link:hover::after {
     }
 
     header .navbar-toggler {
-        margin-left: 5rem; /* Move hamburger to the left */
+        margin-left: 4rem; /* Move hamburger to the left */
         margin-right: auto; /* Align it closer to the left edge */
         align-self: center; /* Ensure it aligns vertically */
     }
