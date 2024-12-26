@@ -10,6 +10,7 @@ body {
 
 /* Header Section */ 
 /* Header Section */
+/* Header Section */
 header {
     background-color: #735589; /* Dark green background */
     color: white;
@@ -20,6 +21,7 @@ header {
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     height: calc(150px + env(safe-area-inset-top)); /* Include safe area for iPhones */
+    padding-top: env(safe-area-inset-top); /* Add padding to the top to cover the notch area */
 }
 
 
@@ -60,7 +62,7 @@ header .navbar-brand img {
     width: 200px !important; /* Increased width for a larger logo */
     height: auto !important; /* Maintain aspect ratio */
     margin-left: -2.5rem !important; /* Adjust margin for proper alignment */
-    margin-top: -2.5rem; /* Adjust top margin for better positioning */
+    margin-top: -1.3rem; /* Adjust top margin for better positioning */
     object-fit: contain; /* Ensure the logo fits without distortion */
     max-height: 400px; /* Increase maximum height to allow for a larger logo */
 
