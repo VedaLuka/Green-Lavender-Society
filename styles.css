@@ -60,7 +60,7 @@ header .navbar-brand img {
     width: 200px !important; /* Increased width for a larger logo */
     height: auto !important; /* Maintain aspect ratio */
     margin-left: -2.5rem !important; /* Adjust margin for proper alignment */
-    margin-top: -1.2rem; /* Adjust top margin for better positioning */
+    margin-top: -2.5rem; /* Adjust top margin for better positioning */
     object-fit: contain; /* Ensure the logo fits without distortion */
     max-height: 400px; /* Increase maximum height to allow for a larger logo */
 
