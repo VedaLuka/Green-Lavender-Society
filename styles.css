@@ -375,13 +375,13 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 .timeline-item .timeline-content h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #264653;
     margin-bottom: 0.5rem;
 }
 
 .timeline-item .timeline-content p {
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #555;
     margin: 0;
 }
@@ -397,6 +397,24 @@ header .navbar-collapse .nav-link:hover::after {
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .timeline-item .timeline-content {
+        text-align: center; /* Center-align the content on smaller screens */
+    }
+
+    .timeline-item .timeline-content h3 {
+        text-align: center; /* Center-align subheaders */
+        font-size: 1.8rem; /* Optional: Adjust font size for smaller screens */
+    }
+
+    .timeline-item .timeline-content p {
+        text-align: center; /* Center-align paragraphs */
+        font-size: 1.4rem; /* Optional: Adjust font size for smaller screens */
+        line-height: 1.6; /* Ensure readability */
+    }
 }
 
 
@@ -531,6 +549,11 @@ header .navbar-collapse .nav-link:hover::after {
         border-radius: 8px; /* Smaller border-radius for items */
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for smaller screens */
     }
+
+    .objective-item h3 {
+        font-weight: bold; /* Make the header titles bold */
+        text-align: center; /* Center-align the headers for a cleaner look */
+    }
 }
 
 
@@ -581,103 +604,6 @@ header .navbar-collapse .nav-link:hover::after {
 }
 
 
-.environment-news {
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #f9f9f9, #ffffff);
-    border-radius: 15px;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 4rem;
-}
-
-.environment-news .section-title {
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 3rem; /* Add space below the title */
-}
-
-
-.featured-news {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.featured-news img {
-    flex: 1;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.featured-news-content {
-    flex: 1;
-}
-
-.featured-news-content h3 {
-    font-size: 2rem;
-    color: #264653;
-    margin-bottom: 1rem;
-}
-
-.featured-news-content p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.featured-news-content .read-more {
-    font-size: 1rem;
-    color: #2a9d8f;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.featured-news-content .read-more:hover {
-    color: #e76f51;
-}
-
-.additional-news .news-item {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-
-
-.additional-news .news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.additional-news .news-item h4 {
-    font-size: 1.5rem;
-    color: #264653;
-    margin-bottom: 0.5rem;
-}
-
-.additional-news .news-item p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.additional-news .news-item .read-more {
-    font-size: 1rem;
-    color: #2a9d8f;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.additional-news .news-item .read-more:hover {
-    color: #e76f51;
-}
 
 /* Associated Companies Section */
 .associated-companies {
