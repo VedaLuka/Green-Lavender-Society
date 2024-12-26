@@ -13,13 +13,15 @@ body {
 header {
     background-color: #735589; /* Dark green background */
     color: white;
-    padding: 0.5rem 1rem; /* Reduced padding for a more compact navbar */
+    padding: 0.5rem 1rem; /* Retain existing padding */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: calc(150px + env(safe-area-inset-top)); /* Include safe area for iPhones */
 }
+
 
 /* Navbar Container Adjustment */
 header .navbar {
@@ -115,6 +117,8 @@ header .nav-link:hover {
         gap: 1rem; /* Space out links more evenly */
     }
 }
+
+
 
 /* Mobile View (Small Screens) */
 @media (max-width: 991px) {
