@@ -945,6 +945,14 @@ footer a:hover {
     color: #ffffff;
 }
 
+.footer-contact p:last-child {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+
 
 @keyframes pulse {
     0%, 100% {
